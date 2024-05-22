@@ -24,12 +24,9 @@ var countdown = props.gameMode === 'Survival' ? ref(2) : ref(20);
 var xValue = ref(568)
 var yValue = ref(300)
 var score = ref(0);
-var movementTimer = 0;
 var scoreTimer = 0;
-var test = 0;
 var speed = 1000;
 var countdownTimer = 0;
-var flag = false;
 
 const props = defineProps({
   gameMode: String  
@@ -48,16 +45,14 @@ function resetCountdown(){
 }
 
 function move(){
-  movementTimer = setInterval(() => {
+  var movementTimer = setInterval(() => {
     
     // random point on screen, positive number
-    var xRandom = Math.floor(Math.random() * window.innerWidth);
-    var yRandom = Math.floor(Math.random() * window.innerHeight);  
+    xValue.value = Math.floor(Math.random() * window.innerWidth);
+    yValue.value = Math.floor(Math.random() * window.innerHeight);  
      
-    xValue.value = xRandom
-    yValue.value = yRandom
     // time until next movement is between 400 and 1200ms
-    speed = Math.floor(Math.random() * (1200-400) + 400);
+    speed = Math.floor(Math.random() * (2000-200) + 200);
   }, speed);
 }
 
