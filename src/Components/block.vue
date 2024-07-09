@@ -13,7 +13,7 @@
   <div v-if="props.gameMode === 'Survival'" :style="{position:'absolute', top:yValue + 'px', left:xValue + 'px'}" @mouseover="incrementScore(); resetCountdown();" @mouseleave="stopScore(); startCountdown(2);" id="block">
   </div>
 
-  <div v-if="props.gameMode === 'Countdown'" :style="{position:'absolute', top:yValue + 'px', left:xValue + 'px'}" @mouseenter="startCountdown(20)" @mouseover="incrementScore();" @mouseleave="stopScore();" id="block">
+  <div v-if="props.gameMode === 'Countdown'" :style="{position:'absolute', top:yValue + 'px', left:xValue + 'px'}" @mouseenter="startCountdown()" @mouseover="incrementScore();" @mouseleave="stopScore();" id="block">
   </div> 
 </template>
 
@@ -32,7 +32,7 @@ const props = defineProps({
   gameMode: String  
 });
 
-function startCountdown(n){
+function startCountdown(){
   if (props.gameMode === 'Countdown' && countdownTimer != 0){
     return;
   }
@@ -47,12 +47,12 @@ function resetCountdown(){
 function move(){
   var movementTimer = setInterval(() => {
     
-    // random point on screen, positive number
+    // random point on screen
     xValue.value = Math.floor(Math.random() * window.innerWidth);
     yValue.value = Math.floor(Math.random() * window.innerHeight);  
      
     // time until next movement is between 400 and 1200ms
-    speed = Math.floor(Math.random() * (2000-200) + 200);
+    speed = Math.floor(Math.random() * (1200-400) + 400);
   }, speed);
 }
 
