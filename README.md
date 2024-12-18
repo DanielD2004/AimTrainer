@@ -1,17 +1,6 @@
-## Project Setup
+Aim Trainer with 2 modes. 
 
-```sh
-npm install
-```
+Countdown: Get as many points as you can within the 20seconds
+Survival: Last as long as you can, you have 2 seconds after leaving the circle to get your cursor back on it
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+https://aim-trainer-ten.vercel.app/
