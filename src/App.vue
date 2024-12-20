@@ -34,8 +34,8 @@ var propPassed = ref(false);
       <button id="startButton" :disabled="picked == 'none'"   @click="propPassed = true; hideStartButton = true;">Start</button>
     </div>
     
-    <Block v-if="propPassed" :gameMode="picked" @gameOver="end()"/>
   </main>
+    <Block v-if="propPassed" :gameMode="picked" @gameOver="end()"/>
   
 </template>
 
