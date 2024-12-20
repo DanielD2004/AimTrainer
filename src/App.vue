@@ -23,15 +23,19 @@ var propPassed = ref(false);
     <div  id="gameModeSelector">
       <h1>Pick a Gamemode</h1>
       <!-- picked variable holds the value of selected button-->
-      <input type="radio" id="survival" value="Survival" v-model="picked" />
-      <label for="survival">Survival</label>
-      <input type="radio" id="countdown" value="Countdown" v-model="picked" />
-      <label for="countdown">Countdown</label>
+      <div>
+        <input type="radio" id="survival" value="Survival" v-model="picked" />
+        <label for="survival">Survival</label>
+      </div>
+      <div>
+        <input type="radio" id="countdown" value="Countdown" v-model="picked" />
+        <label for="countdown">Countdown</label>
+      </div>
       <button id="startButton" :disabled="picked == 'none'"   @click="propPassed = true; hideStartButton = true;">Start</button>
     </div>
     
-  </main>
     <Block v-if="propPassed" :gameMode="picked" @gameOver="end()"/>
+  </main>
   
 </template>
 
@@ -47,8 +51,8 @@ var propPassed = ref(false);
   
   input[type='radio'] { 
        transform: scale(2); 
-       margin-left:45%;
        margin-bottom:20px;
+       margin-left:46%;
    }
 
   label{
